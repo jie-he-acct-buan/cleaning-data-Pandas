@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Feb 22 23:35:27 2019
-
-@author: Jie
-"""
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,7 +9,7 @@ import seaborn as sns
 import pandas as pd
 
 # Read the file into a DataFrame: df
-df = pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Cleaning Data in Python/dob_job_application_filings_subset.csv')
+df = pd.read_csv('dob_job_application_filings_subset.csv')
 
 # Print the head of df
 print(df.head())
@@ -68,7 +62,7 @@ df.boxplot(column='Initial Cost', by='Borough', rot=90)
 # Display the plot
 plt.show()
 ###############################################################################
-airquality=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Cleaning Data in Python/airquality.csv')
+airquality=pd.read_csv('airquality.csv')
 # Print the head of airquality
 print(airquality.head())
 
@@ -124,7 +118,7 @@ print(airquality_pivot.head())
 # Print the head of airquality
 print(airquality.head())
 ###############################################################################
-tb=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Cleaning Data in Python/tb.csv')
+tb=pd.read_csv('tb.csv')
 print(tb.head())
 
 # Melt tb: tb_melt
@@ -140,7 +134,7 @@ tb_melt['age_group'] = tb_melt.variable.str[1:]
 print(tb_melt.head())
 
 ###############################################################################
-ebola=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Cleaning Data in Python/ebola.csv')
+ebola=pd.read_csv('ebola.csv')
 # Melt ebola: ebola_melt
 ebola_melt = pd.melt(ebola, id_vars=['Date', 'Day'], var_name='type_country', value_name='counts')
 
@@ -214,7 +208,7 @@ o2o = pd.merge(left=site, right=visited, left_on='name', right_on='site')
 # Print o2o
 print(o2o)
 ###############################################################################
-tips=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Cleaning Data in Python/tips.csv')
+tips=pd.read_csv('tips.csv')
 tips['sex']=tips['sex'].astype('category')
 tips['smoker']=tips['smoker'].astype('category')
 tips['tip']=tips['tip'].astype(str)
@@ -277,7 +271,7 @@ tips['recode'] = tips['sex'].apply(recode_gender)
 # Print the first five rows of tips
 print(tips.head())
 ###############################################################################
-tips=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Cleaning Data in Python/tips.csv')
+tips=pd.read_csv('tips.csv')
 
 # Write the lambda function using replace
 tips['total_dollar_replace'] = tips.total_dollar.apply(lambda x: x.replace('$', ''))
@@ -289,7 +283,7 @@ tips['total_dollar_re'] = tips.total_dollar.apply(lambda x: re.findall('\d+\.\d+
 print(tips.head())
 
 ###############################################################################
-g1800s=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Cleaning Data in Python/g1800s.csv')
+g1800s=pd.read_csv('g1800s.csv')
 # Import matplotlib.pyplot
 import matplotlib.pyplot as plt
 
@@ -328,51 +322,3 @@ assert g1800s.iloc[:, :100].apply(check_null_or_valid, axis=1).all().all()
 # Check that there is only one instance of each country
 assert g1800s['Life expectancy'].value_counts()[0] == 1
 ###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-###############################################################################
-
-
